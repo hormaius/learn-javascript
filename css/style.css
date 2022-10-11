@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: rgb(255, 162, 162);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 162, 162, 1) 0%,
+    rgba(255, 230, 194, 1) 20%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  font-family: "Poppins", sans-serif;
+  color: #343a40;
+}
+
+header,
+nav {
+  text-align: center;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  /* To remove listing styles */
+  list-style: none;
+  padding-left: 0px;
+}
+
+h2 {
+  border: solid 2px white;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #343a40;
+}
+
+li:hover {
+  background-color: aquamarine;
+}
