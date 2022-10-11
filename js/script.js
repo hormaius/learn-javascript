@@ -1,4 +1,5 @@
 "use strict";
+/*
 let message;
 message = `Hello`; // adds the Hello string to the message let variable
 
@@ -22,6 +23,7 @@ let currentFaction = "military";
 let playerCurrentFaction = currentFaction;
 
 console.log(`Player's current faction is ${playerCurrentFaction}.`);
+*/
 
 // VARIABLES
 // Constant
@@ -53,8 +55,8 @@ console.log(
 
 // Assignment 3 - Uppercase const?
 // Check notes
-
 /* ************************************************************* */
+/*
 // MDN - Basic math in JS, numbers and operators
 // Assignment 1
 const ammoCount = 30;
@@ -65,9 +67,9 @@ console.log(`There's ${ammoCount} ${ammoDiameter} bullets left in the mag.`); //
 console.log(`Type of ammoCount is ${typeof ammoCount}.`); // checks type of ammoCount
 
 console.log(`Type of ammoDiameter is ${typeof ammoDiameter}.`); // checks type of ammoDiameter
-
+*/
+/*
 // Useful Number methods
-
 // toFixed() - lets you round the number to a fixed number of decimals, stated in the parenthesis
 const bulletDamage = 19.99682482455018;
 
@@ -76,7 +78,8 @@ console.log(`Bullet damage is ${bulletDamage}, unrounded.`);
 const bulletDamageRounded = bulletDamage.toFixed(2);
 
 console.log(`Final bullet damage is ${bulletDamageRounded}, rounded.`);
-
+*/
+/*
 // Converting to number data types
 let transactionBuyAmount = "35"; // imagine this as the player buying x amount of bullets from the in-game shop, submitted in a form
 transactionBuyAmount += 5; // and this as the "bonus" bullets they receive from the vendor
@@ -85,7 +88,7 @@ console.log(`You received ${transactionBuyAmount} bullets!`); // this will outpu
 
 transactionBuyAmount = Number(transactionBuyAmount) + 5;
 console.log(transactionBuyAmount);
-
+*/
 ///////////////////////////////////////////////////////////
 // BACK TO ODIN PROJECT ///////////////////////////////////
 ///////////////////////////////////////////////////////////
@@ -106,23 +109,26 @@ let actual = max - 13;
 let percentage = actual / max;
 console.log(percentage);
 */
-
+/*
 // Fundamentals Part 2 - JavaScript
 const welcomeMessage = "welcome to the Zone, Stalker";
 console.log(
   `You can hear a croaky voice whispering "${welcomeMessage}" through the radio.`
 );
-
+*/
+/*
 // MDN - String concatenation using +
 console.log("A loud speaker plays an audio recording: " + welcomeMessage + ".");
-
+*/
+/*
 // W3Schools - String methods
 console.log(`Length of welcomeMessage is ${welcomeMessage.length}.`); // shows character length of welcomeMessage
 
 let cryptMsg = "eth2btc666lth222";
 let msgRcv = cryptMsg.slice(4, 10); // "slices" the btc666 part of the string, check notes 2.1.2 for more
 console.log(msgRcv);
-
+*/
+/*
 // JS.info - Comparisons
 let knifeDmg = 50;
 let playerHealth = 100;
@@ -142,7 +148,8 @@ console.log(`Is ( null == undefined? ): ${null == undefined}`);
 console.log(`Is ( null === undefined? ): ${null === undefined}`);
 // This above is strictly for this case, null and undefined are "equal" to each other in the sense of ==, but not any other value
 // For MATH and other comparisons ( < > <= >=), null = 0, undefined = NaN
-
+*/
+/*
 let dummy;
 if (dummy == null) {
   console.log(`dummy is equal in value(==) to null`);
@@ -155,18 +162,19 @@ if (dummy === null) {
 } else {
   console.log(`dummy is NOT equal to null in value AND type`);
 } // the else rule applies, undefined === null is NOT true
-
+*/
+/*
 // 3.1.2 CONDITIONALS
 // if statement
 let hour = 18;
-
+*/
 /*
 if (hour <= 18) {
   greeting = "Good day!";
   console.log(greeting);
 } // prints out the greeting var, "Good day!" string in console
 */
-
+/*
 // else statement
 if (hour <= 18) {
   greeting = "Good day!";
@@ -175,7 +183,8 @@ if (hour <= 18) {
   greeting = "Good evening!";
   console.log(greeting);
 }
-
+*/
+/*
 // else if statement
 let playerLevel = 20;
 let isPlayerInvited = false;
@@ -218,6 +227,7 @@ console.log(
     fakeValue == !realValue
   } if false, it is equal`
 );
+*/
 
 /*
 alert(Boolean("non-empty string")); // true
@@ -237,8 +247,10 @@ alert(null || 2 || undefined); // result is 2
 
 // alert(alert(1) || 2 || alert(3));
 
+/*
 console.log(null || (2 && 3) || 4); // 3 because both values are true so the last value is returned
-
+*/
+/*
 // Check the range between
 let secondAge = 4;
 if (secondAge >= 14 && secondAge <= 90) {
@@ -246,20 +258,21 @@ if (secondAge >= 14 && secondAge <= 90) {
 } else {
   console.log("Age is NOT between 14 and 90!");
 } // when age is 14, it's true
-
+*/
+/*
 // Check the range outside
 if (!(secondAge >= 14 && secondAge <= 90)) {
   console.log("it works");
 } else {
   console.log("it works as well");
 } // when age is 4, it's
-
+*/
 /*
 if (-1 || 0) alert("first");
 if (-1 && 0) alert("second");
 if (null || (-1 && 1)) alert("third");
 */
-
+/*
 let userName = prompt("Please enter your username:");
 
 if (userName === "admin") {
@@ -275,7 +288,7 @@ if (userName === "admin") {
   alert("Canceled");
 } else {
   alert("I don't know you");
-}
+} */
 
 // Code above is login system done in if...else
 
@@ -290,4 +303,3 @@ if ((shoppingDone)) {
   console.log(`Pocket money is $${pocketMoney}`);
 }
  */
-console.log(!!"full string");
