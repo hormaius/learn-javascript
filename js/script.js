@@ -428,3 +428,23 @@ console.log(orangeJuice); */
 }
 const barrelCall = emptyBarrel(5);
 console.log(barrelCall); // undefined, the function does not have a value */
+
+// Function declarations vs expressions
+/* function calcAgeOne(birthYear) {
+  // this is a function declaration
+  const age = 2022 - birthYear; // subtracts the birthYear parameter from 2022
+  return age; // returns the age
+}
+const ageOne = calcAgeOne(1996);
+
+const calcAgeTwo = function (birthYearTwo) {
+  // this is a function expression
+  return 2022 - birthYearTwo;
+};
+const ageTwo = calcAgeTwo(1996);
+
+console.log(
+  `function declaration = ${ageOne}, function expression = ${ageTwo}`
+); */
+/* Function declarations can be called before the function being declared but NOT the same for expressions.
+Function expressions must have the function declared before invoking the function. */
