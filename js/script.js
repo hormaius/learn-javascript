@@ -303,3 +303,64 @@ if ((shoppingDone)) {
   console.log(`Pocket money is $${pocketMoney}`);
 }
  */
+
+// THE CONDITIONAL TERNARY OPERATOR
+/* const age = 23;
+// age >= 18
+//   ? console.log("You can drink wine. (age > 18)")
+//   : console.log("You can't drink wine yet! (age < 18)");
+
+const drink =
+  age >= 18
+    ? "You can drink wine. (age > 18)"
+    : "You can't drink wine yet! (age < 18)";
+console.log(drink);
+
+let drinkTwo;
+if (age >= 18) {
+  drinkTwo = "wine";
+} else {
+  drinkTwo = "water";
+}
+console.log(`I'll have ${drinkTwo} please!`); */
+
+// THE SWITCH STATEMENT
+let playerFaction;
+let playerRank;
+let playerName;
+let playerGender;
+
+// remember to declare variables before using them
+
+playerFaction = "USEC";
+playerGender = "brother";
+playerRank = "corporal";
+playerName = "John";
+
+// switch statement is run as " playerFaction === USEC", it uses a strict equality operator
+/* switch (playerFaction) {
+  case "USEC":
+    console.log(`Welcome to the base, ${playerRank} ${playerName}.`);
+    break;
+  case "BEAR":
+    console.log(`Privyet, ${playerRank} ${playerName}.`);
+    break;
+  case "NOIR":
+    console.log(`Proceed further, ${playerGender} ${playerName}.`);
+    break;
+  case "SCAV":
+    console.log(`You're ${playerName}? Move on, cyka.`);
+    break;
+  default:
+    console.log("You're not allowed to go inside yet."); // works in case none of the options above can be run
+} */
+
+if (playerFaction === "USEC") {
+  console.log(`Welcome to the base, ${playerRank} ${playerName}.`);
+} else if (playerFaction === "BEAR") {
+  console.log("Reshala's waiting for you, head to the second floor.");
+} else if (playerFaction === "NOIR" || playerFaction === "SCAV") {
+  console.log("PMC's first, hold on.");
+} else {
+  console.log("You're not allowed inside yet.");
+}
