@@ -324,7 +324,7 @@ if (age >= 18) {
 }
 console.log(`I'll have ${drinkTwo} please!`); */
 
-// THE SWITCH STATEMENT
+/* // THE SWITCH STATEMENT
 let playerFaction;
 let playerRank;
 let playerName;
@@ -335,7 +335,7 @@ let playerGender;
 playerFaction = "USEC";
 playerGender = "brother";
 playerRank = "corporal";
-playerName = "John";
+playerName = "John"; */
 
 // switch statement is run as " playerFaction === USEC", it uses a strict equality operator
 /* switch (playerFaction) {
@@ -355,7 +355,7 @@ playerName = "John";
     console.log("You're not allowed to go inside yet."); // works in case none of the options above can be run
 } */
 
-if (playerFaction === "USEC") {
+/* if (playerFaction === "USEC") {
   console.log(`Welcome to the base, ${playerRank} ${playerName}.`);
 } else if (playerFaction === "BEAR") {
   console.log("Reshala's waiting for you, head to the second floor.");
@@ -363,4 +363,68 @@ if (playerFaction === "USEC") {
   console.log("PMC's first, hold on.");
 } else {
   console.log("You're not allowed inside yet.");
+} */
+
+// Coding challenge #4
+/* let tip;
+let bill;
+let value;
+
+bill = 275;
+tip = bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+value = bill + tip;
+
+console.log(
+  `The first bill is ${bill}, the tip is ${tip} and the total value is ${value}.`
+);
+
+bill = 40;
+tip = bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+value = bill + tip;
+
+console.log(
+  `The second bill is ${bill}, the tip is ${tip} and the total value is ${value}.`
+);
+
+bill = 430;
+tip = bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+value = bill + tip;
+
+console.log(
+  `The third bill is ${bill}, the tip is ${tip} and the total value is ${value}.`
+); */
+// Challenge completed
+/* let hasDriversLicense = true;
+const passTest = true;
+
+if (hasDriversLicense) {
+  console.log(`Congratulations, you've passed the test! = ${passTest}`);
+} */
+
+// PART 2 Fundamentals Jonas
+// Functions
+
+// declaring a function
+/* function logger() { // not all functions need a parameter or return value to run
+  console.log("My name is Marks");
 }
+
+// to call, invoke or run the function, use its name
+logger();
+ */
+/* function fruitProcessor(apples, oranges) {
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+} */
+
+/* const appleJuice = fruitProcessor(5, 0); // here we capture the value to a variable called appleJuice
+const orangeJuice = fruitProcessor(0, 5);
+const mixedJuice = fruitProcessor(2, 2);
+console.log(fruitProcessor(5, 2)); // we did the same as above, but we did NOT capture the value into any variable
+console.log(orangeJuice); */
+
+/* function emptyBarrel() {
+  console.log(`this is an empty barrel`);
+}
+const barrelCall = emptyBarrel(5);
+console.log(barrelCall); // undefined, the function does not have a value */
