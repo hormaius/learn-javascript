@@ -448,3 +448,131 @@ console.log(
 ); */
 /* Function declarations can be called before the function being declared but NOT the same for expressions.
 Function expressions must have the function declared before invoking the function. */
+
+// Arrow function
+/* const calcAge = (birthYear) => 2022 - birthYear; // arrow function, useful for one-liners
+const playerAge = calcAge(1996); // 26 as of 2022
+console.log(playerAge); */
+
+/* const retirementLeft = (birthYear, firstName) => {
+  // if we need more parameters, we wrap them in parentheses
+  const age = 2022 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} retires in ${retirement} years.`;
+};
+console.log(retirementLeft(1996, "Marks"));
+console.log(retirementLeft(1982, "Reshala")); */
+
+// Functions calling other functions
+/* function fruitCutter(fruit) {
+  // this function multiplies the (apples, oranges) parameters in the fruitProcessor function by 4, then we save them in their respective "applePieces" and "orangePieces" variables to store them
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = fruitCutter(apples);
+  const orangePieces = fruitCutter(oranges); // here they are stored in their respective variables
+
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3)); // and we use the fruitProcessor function to call this function, thereby invoking two functions here */
+
+// Reviewing functions
+/* const ageCalculator = function (birthYearSecond) {
+  return 2022 - birthYearSecond;
+};
+
+const retirementLeft = function (birthYear, firstName) {
+  // NOTE the reason why we store the function in variables is because functions can't be called in reference to another functions without variables!!
+  const age = ageCalculator(birthYear);
+  const retirement = 65 - age;
+  if (retirement > 0) {
+    return `${firstName} has ${retirement} years left for their retirement.`;
+  } else {
+    return -1;
+  }
+   const checker = retirement > 0 ? return retirement : return `Candidate already passed their retirement date!`; // NOTE this is invalid! ternary operator only uses expressions and NOT statements
+  // return `${firstName} retires in ${retirement} years.`;
+};
+
+console.log(retirementLeft(1996, "Marks")); */
+
+// Code assignments - Fundamentals Part 2
+// ASSIGNMENT: Functions
+/* function describeCountry(country, population, capitalCity) {
+  return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+}
+const france = describeCountry("France", 67, "Paris");
+console.log(france);
+const germany = describeCountry("Germany", 83, "Berlin");
+console.log(germany);
+const italy = describeCountry("Italy", 59, "Rome");
+console.log(italy); */
+
+// ASSIGNMENT: Function declarations vs expressions
+/* function percentageOfWorld(population) {
+  return (population / 7900) * 100;
+}
+const france = percentageOfWorldSecond(69);
+console.log(`France makes up %${france} of world population!`);
+const germany = percentageOfWorldSecond(83);
+console.log(`Germany makes up %${germany} of world population!`);
+const italy = percentageOfWorldSecond(59);
+console.log(`Italy makes up %${italy} of world population!`);
+ */
+/* const percentageOfWorldSecond = function (population) {
+  return (population / 7900) * 100;
+};
+
+const france = percentageOfWorldSecond(69);
+console.log(`France makes up %${france} of world population!`);
+const germany = percentageOfWorldSecond(83);
+console.log(`Germany makes up %${germany} of world population!`);
+const italy = percentageOfWorldSecond(59);
+console.log(`Italy makes up %${italy} of world population!`);
+ */
+
+/* const percentageOfWorldThird = (population) => (population / 7900) * 100; // using an arrow function to do the same as above
+const percentage = percentageOfWorldThird(population);
+console.log(`France makes up %${percentageFrance} of world's population.`);
+
+// ASSIGNMENT: Functions calling other functions
+const describePopulation = function (country, populationTwo) {
+  const percentage = percentageOfWorldThird(populationTwo);
+  const description = `${country} has ${populationTwo} million people, which is about ${percentage}% of the world.`;
+  console.log(description);
+};
+
+describePopulation("France", 69);
+describePopulation("Germany", 83);
+describePopulation("Italy", 59); */
+
+// My examples
+// Annual tax calculation
+/* const taxPercentage = (userIncomeAnnual) => (userIncomeAnnual / 100) * 20;
+
+const taxCalculator = function (userName, userJob, userIncomeAnnual) {
+  const taxPercent = taxPercentage(userIncomeAnnual);
+  const taxDesc = `${userName}, employed as a/an ${userJob} with ${userIncomeAnnual} of annual income, is to pay ${taxPercent} in taxes.`;
+  console.log(taxDesc);
+};
+
+taxCalculator("Marks", "Frontend Engineer", 98000); */
+
+// Profit calculation
+const profitCalculator = (totalIncome, totalCosts) => totalIncome - totalCosts;
+
+const fbaProfitTool = function (
+  productName,
+  productType,
+  totalIncome,
+  totalCosts
+) {
+  const displayProfit = profitCalculator(totalIncome, totalCosts);
+  const displayProfitFinal = `${productName}, typed ${productType} has made ${displayProfit} of income after ${totalCosts} in costs.`;
+  console.log(displayProfitFinal);
+};
+
+fbaProfitTool("MVRK Skull Decor", "Halloween Home Decor", 70699, 2973);
