@@ -562,7 +562,7 @@ const taxCalculator = function (userName, userJob, userIncomeAnnual) {
 taxCalculator("Marks", "Frontend Engineer", 98000); */
 
 // Profit calculation
-const profitCalculator = (totalIncome, totalCosts) => totalIncome - totalCosts;
+/* const profitCalculator = (totalIncome, totalCosts) => totalIncome - totalCosts;
 
 const fbaProfitTool = function (
   productName,
@@ -575,4 +575,16 @@ const fbaProfitTool = function (
   console.log(displayProfitFinal);
 };
 
-fbaProfitTool("MVRK Skull Decor", "Halloween Home Decor", 70699, 2973);
+fbaProfitTool("MVRK Skull Decor", "Halloween Home Decor", 70699, 2973); */
+
+// Tax calculation #2 for practice
+/* const taxCalculator = (totalIncome) => (totalIncome / 100) * 20;
+const revenueCalculator = function (userName, userJob, dateYear, totalIncome) {
+  const taxCalculation = taxCalculator(totalIncome);
+  const revenueDescription = `${userName} is titled as a/an ${userJob}, their total income as of ${dateYear} is $${totalIncome}, their total tax due is $${taxCalculation}.`;
+  console.log(revenueDescription);
+};
+
+revenueCalculator("Marks Turu", "frontend developer", 2022, 48000); */
+
+// CHALLENGE: Fundamentals Part 2, coding challenge #1
