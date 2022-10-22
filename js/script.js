@@ -550,12 +550,12 @@ describePopulation("Germany", 83);
 describePopulation("Italy", 59); */
 
 // My examples
-// Annual tax calculation
-/* const taxPercentage = (userIncomeAnnual) => (userIncomeAnnual / 100) * 20;
+// VAT calculation
+/* const taxPercentage = (userIncome) => (userIncome / 100) * 20;
 
-const taxCalculator = function (userName, userJob, userIncomeAnnual) {
-  const taxPercent = taxPercentage(userIncomeAnnual);
-  const taxDesc = `${userName}, employed as a/an ${userJob} with ${userIncomeAnnual} of annual income, is to pay ${taxPercent} in taxes.`;
+const taxCalculator = function (userName, userJob, userIncome) {
+  const taxPercent = taxPercentage(userIncome);
+  const taxDesc = `${userName}, employed as a/an ${userJob} with ${userIncomeA} of revenue, is to pay ${taxPercent} in VAT.`;
   console.log(taxDesc);
 };
 
@@ -577,7 +577,7 @@ const fbaProfitTool = function (
 
 fbaProfitTool("MVRK Skull Decor", "Halloween Home Decor", 70699, 2973); */
 
-// Tax calculation #2 for practice
+// VAT calculation #2 for practice
 /* const taxCalculator = (totalIncome) => (totalIncome / 100) * 20;
 const revenueCalculator = function (userName, userJob, dateYear, totalIncome) {
   const taxCalculation = taxCalculator(totalIncome);
@@ -588,3 +588,128 @@ const revenueCalculator = function (userName, userJob, dateYear, totalIncome) {
 revenueCalculator("Marks Turu", "frontend developer", 2022, 48000); */
 
 // CHALLENGE: Fundamentals Part 2, coding challenge #1
+/* const calcAverage = (scoreFirst, scoreSecond, scoreThird) =>
+  (scoreFirst + scoreSecond + scoreThird) / 3;
+
+// Data 1
+let scoreDolphins = calcAverage(44, 23, 71);
+console.log(`Dolphins first data average: ${scoreDolphins}`);
+let scoreKoalas = calcAverage(65, 54, 49);
+console.log(`Koalas first data average: ${scoreKoalas}`);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= avgKoalas * 2) {
+    console.log(`Dolphins win!🏆 (${avgDolphins} vs ${avgKoalas})`);
+  } else if (avgKoalas >= avgDolphins * 2) {
+    console.log(`Koalas win!🏆 (${avgKoalas} vs ${avgDolphins})`);
+  } else {
+    console.log(
+      `It's a draw!🔗 (Dolphins: ${avgDolphins} vs Koalas: ${avgKoalas})`
+    );
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+// Data 2
+console.log("___Second data___");
+scoreDolphins = calcAverage(85, 54, 41);
+console.log(`Dolphins second data average: ${scoreDolphins}`);
+scoreKoalas = calcAverage(23, 34, 27);
+console.log(`Koalas second data average: ${scoreKoalas}`);
+
+checkWinner(scoreDolphins, scoreKoalas); */
+
+// LECTURE: Arrays
+/* const friends = ["Michael", "Steven", "Peter"];
+const yearsOld = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends);
+console.log(`Last variable in nato array: ${friends[2]}`);
+console.log(
+  `Taking last variable from the array by subtracting one from its length: ${
+    friends[friends.length - 1]
+  }`
+); // arrays are 0 based, to take the last number in account we subtract 1 from the length of the array
+console.log(`Length of "friends" array: ${friends.length}`);
+
+friends[friends.length - 1] = "Jay"; // we change the "DELTA" variable in the array to "DELTA-FOXTROT"
+console.log(friends);
+
+// array is NOT a primitive value so its contents can be changed, but you can NOT replace a whole array by doing:
+//friends = ["Mike", "Saul", "Gordon"];
+
+const firstName = "Jonas"; // we can use variables in arrays
+const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
+console.log(jonas);
+console.log(`jonas length: ${jonas.length}`);
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const years = [1967, 1990, 2002, 2010, 2018]; // we're gonna use this array down at the last section of this course within another array
+const ageOne = calcAge(years[0]);
+const ageTwo = calcAge(years[1]);
+const ageThree = calcAge(years[years.length - 1]);
+console.log(ageOne, ageTwo, ageThree);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
+// above we use a function inside the ages array to push the values from the other years array up above */
+
+// LECTURE: Basic Array operations
+/* const friends = ["Michael", "Steven", "Peter"];
+
+// ADD elements
+friends.push("Jay"); // adds "Jay" to the array
+console.log(friends);
+
+const mikeTest = friends.push("Mike"); // the array push method returns a length value
+console.log(mikeTest); // 5
+
+friends.unshift("Saul"); // adds as first element
+console.log(friends);
+
+// REMOVE elements
+friends.pop(); // removes last element from array - no info needed, it strictly removes the last element
+console.log(friends);
+const removedFriend = friends.pop(); // returns the removed element from the array
+console.log(`Popped element from "removedFriend": ${removedFriend}`);
+
+friends.shift(); // removes the first element
+console.log(friends);
+
+// indexOf method
+console.log(friends.indexOf("Steven")); // returns the index/number of element
+
+friends.push(23);
+// includes method - strict equality(===)
+console.log(friends.includes("Bob")); // checks if array includes the element = true/false
+console.log(friends.includes("23")); // false
+
+if (friends.includes("Peter")) {
+  console.log(`You do have a friend called Peter.`);
+} */
+
+// CODING CHALLENGE #2
+const calculateTip = (bill) => (bill <= 300 ? bill * 0.15 : bill * 0.2);
+
+const tip = calculateTip(100);
+console.log(tip);
+
+const bills = [125, 555, 44];
+const tips = [
+  calculateTip(bills[0]),
+  calculateTip(bills[1]),
+  calculateTip(bills[2]),
+];
+console.log(`bills: ${bills} tips: ${tips}`);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(total);
+// TODO REVISION!!!
