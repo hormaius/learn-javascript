@@ -697,7 +697,7 @@ if (friends.includes("Peter")) {
 } */
 
 // CODING CHALLENGE #2
-const calculateTip = (bill) => (bill <= 300 ? bill * 0.15 : bill * 0.2);
+/* const calculateTip = (bill) => (bill <= 300 ? bill * 0.15 : bill * 0.2);
 
 const tip = calculateTip(100);
 console.log(tip);
@@ -713,3 +713,82 @@ console.log(`bills: ${bills} tips: ${tips}`);
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(total);
 // TODO REVISION!!!
+ */
+
+// CODING CHALLENGE #2 - 16/11/2022 after a huge gap
+/*
+// arrow function
+const calculateTip = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// normal function
+const calculateTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const tip = calculateTip(100);
+console.log(`calculate tip with value "100" = ${tip}`);
+
+const bills = [125, 555, 44];
+console.log(`bills array = ${bills}`);
+
+const tips = [
+  calculateTip(bills[0]),
+  calculateTip(bills[1]),
+  calculateTip(bills[2]),
+];
+console.log(`tips array = ${tips}`);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(`total array = ${total}`); */
+
+// LECTURE: Objects
+// we need the array below to explain difference between objects
+/* const jonasArray = [
+  // array = data structure
+  "Jonas", // first name
+  "Schmedtmann", // last name
+  2037 - 1991, // age
+  "teacher", // job
+  ["Michael", "Peter", "steven"], // friends array
+]; // NOTE we can NOT --name-- these variables inside this array, therefore we have to call them by their order as like jonasArray[1] to get the last name - we use OBJECTS to fix this */
+
+const jonasObject = {
+  // object = data structure - has FIVE properties!
+  firstName: "Jonas", // key: value pair
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+}; // NOTE left side are the KEYS, right side are the VALUES - key/value pairs - here we have 5 properties: property 1: firstName(Jonas), property 2: lastName(Schmedtmann) and so on
+// NOTE in objects, the order of the values DO NOT matter when we want to retrieve them!!!
+// NOTE arrays = unstructured data, objects = structured data
+console.log(jonasObject);
+
+// --- Dot vs Bracket Notation
+// to get a specific key's value:
+console.log(`Jonas object lastName = ${jonasObject.lastName}`); // the dot here is actually an operator which goes to the object and retrieves the value from its key
+console.log(`Jonas object lastName with bracket: ${jonasObject["lastName"]}`); // here we use a bracket notation to grab the value from the lastName key - there is another importance to this, down below
+
+const nameKey = "Name";
+
+console.log(jonasObject["first" + nameKey]);
+console.log(jonasObject["last" + nameKey]);
+// so we use the bracket notation to express anything else than the properties already in the object, such as:
+
+/* const userInterest = prompt(
+  "What are you interested in? (firstName, lastName, age, job, friends)"
+); // to store the answer from the user, what they want to access from the object
+
+if (jonasObject[userInterest]) {
+  console.log(jonasObject[userInterest]); // and here we use the bracket notation - dot notations CAN NOT do this, they access EXISTING props
+} else {
+  console.log(
+    "Wrong request! (firstName, lastName, age, job, friends" // returns this line if user doesn't specify the correct key/property
+  );
+} */
+
+// to add new keys to an object
+jonasObject.location = "Portugal";
+jonasObject["twitter"] = "@jonasschmedtman";
+console.log(jonasObject);
