@@ -753,7 +753,7 @@ console.log(`total array = ${total}`); */
   ["Michael", "Peter", "steven"], // friends array
 ]; // NOTE we can NOT --name-- these variables inside this array, therefore we have to call them by their order as like jonasArray[1] to get the last name - we use OBJECTS to fix this */
 
-const jonasObject = {
+/* const jonasObject = {
   // object = data structure - has FIVE properties!
   firstName: "Jonas", // key: value pair
   lastName: "Schmedtmann",
@@ -773,7 +773,7 @@ console.log(`Jonas object lastName with bracket: ${jonasObject["lastName"]}`); /
 const nameKey = "Name";
 
 console.log(jonasObject["first" + nameKey]);
-console.log(jonasObject["last" + nameKey]);
+console.log(jonasObject["last" + nameKey]); */
 // so we use the bracket notation to express anything else than the properties already in the object, such as:
 
 /* const userInterest = prompt(
@@ -789,6 +789,89 @@ if (jonasObject[userInterest]) {
 } */
 
 // to add new keys to an object
-jonasObject.location = "Portugal";
+/* jonasObject.location = "Portugal";
 jonasObject["twitter"] = "@jonasschmedtman";
 console.log(jonasObject);
+
+// Small challenge
+// Write "Jonas has 3 friends, his best friend is called Michael in a dynamic way. Dynamics = Jonas, 3, Michael"
+
+console.log(
+  `${jonasObject.firstName} has ${jonasObject.friends.length} friends, his best friend is ${jonasObject.friends[0]}.`
+); */
+
+// LECTURE: Object Methods
+/*
+const jonasObject = {
+  firstName: "Jonas", // key: value pair
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+   calcAge: function (birthYear) {
+    // function value
+    return 2037 - birthYear; // NOTE any function that is attached to an object is called OBJECT METHOD
+  },
+};
+  // NOTE In the code below, we use "this" keyword to call the birthYear data of jonasObject. This keyword looks first to the object calling the method, which in this case is jonasObject to take the data from whatever key it is attached to
+   calcAge: function () {
+    return 2037 - this.birthYear; // grabs the birthYear key's value within the "jonasObject" object
+    // NOTE %%% IMPORTANT %%% The reason why we didn't just do jonas.birthYear above is to avoid dry code. If we changed the object's name(which is "jonasObject") to say "schmedtmanObject", we'd have to edit this line as well, which is dry coding. We use "this" keyword to avoid it
+  },
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} years old ${
+      this.job
+    } and he has ${this.hasDriversLicense ? "a" : "no"} drivers license.`;
+  },
+};
+
+console.log(`jonasObject age with calcfunc is = ${jonasObject.calcAge()}`); // = 46
+// console.log(jonasObject["calcAge"](1991)); // = 46 - weird but it works
+console.log(`jonasObject.age is = ${jonasObject.age}`); // this solution is better, because you store the outcome in a new key named "age" within the jonasObject object instead of running a calculation each time to get the result
+
+console.log(jonasObject.getSummary());
+ */
+
+// CODING CHALLENGE 3
+/* const markObject = {
+  fullName: "Mark Miller",
+  weight: 78,
+  height: 1.69,
+  calcBmi: function () {
+    this.bmi = this.weight / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+const johnObject = {
+  fullName: "John Smith",
+  weight: 92,
+  height: 1.95,
+  calcBmi: function () {
+    this.bmi = this.weight / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+markObject.calcBmi(); // method call
+johnObject.calcBmi();
+console.log(markObject.bmi, johnObject.bmi); // without that method call above, markObject.bmi would NOT be available, since it would NOT be generated
+
+if (markObject.bmi > johnObject.bmi) {
+  console.log(
+    `${markObject.fullName}'s BMI (${markObject.bmi} is higher than ${johnObject.fullName}'s BMI (${johnObject.bmi})!)`
+  );
+} else if (johnObject.bmi > markObject.bmi) {
+  console.log(
+    `${johnObject.fullName}'s BMI (${johnObject.bmi}) is higher than ${markObject.fullName}'s BMI (${markObject.bmi})!`
+  );
+} else {
+  console.log(`Check your code!`);
+} */
+
+// LECTURE: for loop
