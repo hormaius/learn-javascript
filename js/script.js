@@ -975,15 +975,27 @@ for (let i = jonasArray.length - 1; i >= 0; i--) {
 } */
 
 // LECTURE: The while loop
-for (let exercise = 1; exercise <= 3; exercise++) {
+/* for (let exercise = 1; exercise <= 3; exercise++) {
   console.log(`------ Starting set number ${exercise} 🏋️`);
   for (let repetition = 1; repetition <= 5; repetition++) {
     console.log(`-- Rep number ${repetition}`);
   }
-}
+} */
 
 let rep = 1;
 while (rep <= 10) {
   console.log(`WHILE: Rep number ${rep}`);
   rep++;
+}
+
+// NOTE while loop's advantage is cases where we might need to check for anything that is NOT a counter (conditions)
+// When you don't know how many iterations a loop will have, the while loop is the best one to go for
+
+// example that depends NOT on a counter but a random variable
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}!`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`You rolled a ${dice}! Congrats! (end)`);
 }
