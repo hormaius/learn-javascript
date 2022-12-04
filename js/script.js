@@ -875,3 +875,115 @@ if (markObject.bmi > johnObject.bmi) {
 } */
 
 // LECTURE: for loop
+// console.log("Lifting weights repetition 1 🏋️");
+// console.log("Lifting weights repetition 2 🏋️");
+// console.log("Lifting weights repetition 3 🏋️");
+// console.log("Lifting weights repetition 4 🏋️");
+// console.log("Lifting weights repetition 5 🏋️");
+// console.log("Lifting weights repetition 6 🏋️");
+// console.log("Lifting weights repetition 7 🏋️");
+// console.log("Lifting weights repetition 8 🏋️");
+// console.log("Lifting weights repetition 9 🏋️");
+// console.log("Lifting weights repetition 10 🏋️");
+/* for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️`);
+} */
+
+/* for (initialExpression; condition; updateExpression) {
+  // for loop body
+} */
+
+/* // to increment by 10
+for (let bulletDmg = 10; bulletDmg <= 50; bulletDmg += 10) {
+  console.log(bulletDmg);
+} */
+
+// LECTURE: Looping Arrays, breaking and continuing
+/* const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  // reading from jonas array
+  console.log(jonasArray[i], typeof jonasArray[i]);
+  // filling types array
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]); // cleaner way to fill array
+}
+
+console.log(types);
+
+const birthYears = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < birthYears.length; i++) {
+  ages.push(2037 - birthYears[i]);
+}
+console.log(ages); */
+
+// continue and break
+// continue: exit the current iteration of the loop and resume from the next
+// break: completely terminate the whole loop
+/* console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+console.log("--- ONLY NUMBERS ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+const playerCash = [500, 1000, 1500, 2000, 2500];
+const playerCashAfterRent = [];
+for (let i = 0; i < playerCash.length; i++) {
+  playerCashAfterRent.push(800 - playerCash[i]);
+  if (playerCashAfterRent >= 1) continue;
+}
+console.log(playerCashAfterRent); */
+
+// practicing what is above
+/* let members = ["Giuseppe", "Genesio", "Ettore", "Accursio"];
+for (let i = 0; i < members.length; i++) {
+  console.log(members[i]);
+} */
+
+// LECTURE: Looping backwards and loops in loops
+/* const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(jonasArray[i]);
+} */
+
+// 3 sets of 15 reps exercise
+/* for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`------ Starting set number ${exercise} 🏋️`);
+  for (let repetition = 1; repetition <= 12; repetition++) {
+    console.log(`-- Rep number ${repetition}`);
+  }
+} */
+
+// LECTURE: The while loop
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`------ Starting set number ${exercise} 🏋️`);
+  for (let repetition = 1; repetition <= 5; repetition++) {
+    console.log(`-- Rep number ${repetition}`);
+  }
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Rep number ${rep}`);
+  rep++;
+}
