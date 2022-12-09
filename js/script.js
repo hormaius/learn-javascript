@@ -982,20 +982,37 @@ for (let i = jonasArray.length - 1; i >= 0; i--) {
   }
 } */
 
-let rep = 1;
+/* let rep = 1;
 while (rep <= 10) {
   console.log(`WHILE: Rep number ${rep}`);
   rep++;
-}
+} */
 
 // NOTE while loop's advantage is cases where we might need to check for anything that is NOT a counter (conditions)
 // When you don't know how many iterations a loop will have, the while loop is the best one to go for
 
 // example that depends NOT on a counter but a random variable
-let dice = Math.trunc(Math.random() * 6) + 1;
+/* let dice = Math.trunc(Math.random() * 6) + 1;
 
 while (dice !== 6) {
   console.log(`You rolled a ${dice}!`);
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) console.log(`You rolled a ${dice}! Congrats! (end)`);
+} */
+
+// CODING CHALLENGE 4 - JS Fundamentals Part 2
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+let calcTip = (bill) => (bill <= 300 ? bill * 0.15 : bill * 0.2);
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
+
+console.log(`bills = ${bills}`);
+console.log(`tips = ${tips}`);
+console.log(`totals = ${totals}`);
