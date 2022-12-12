@@ -1043,3 +1043,39 @@ console.log(totals); */
 };
 console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals)); */
+
+// PROBLEM NOTE REVISE THIS
+// Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error
+
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+
+// Divide and conquer: break the problem into smaller problems and focus on them
+// 1) Understanding the problem
+// - What is a temperature amplitude?
+// - What is a sensor error? What to do with such an error? (ignore)
+
+// 2) Break the problem up into sub-problems
+// - How to find sensor errors?
+// - How to ignore sensor errors?
+// - Find the min and max values in an array
+// - Subtract min from max and return it
+
+const calcTempAmplitude = function (temp) {
+  let min = temp[0];
+  let max = temp[0];
+
+  for (let i = 0; i < temp.length; i++) {
+    const curTemp = temp[i];
+
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+
+  console.log(`min temp = ${min}, max temp = ${max}`);
+
+  const amplitude = min - max;
+  console.log(`temp amplitude = ${amplitude}`);
+  return amplitude;
+};
+// calcTempAmplitude(temperatures);
+calcTempAmplitude([3, 7, 4, 1, 8]);
