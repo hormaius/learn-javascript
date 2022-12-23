@@ -1047,7 +1047,7 @@ console.log(calcAverage(totals)); */
 // PROBLEM NOTE REVISE THIS
 // Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error
 
-const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+// const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 
 // Divide and conquer: break the problem into smaller problems and focus on them
 // 1) Understanding the problem
@@ -1060,12 +1060,13 @@ const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 // - Find the min and max values in an array
 // - Subtract min from max and return it
 
-const calcTempAmplitude = function (temp) {
+/* const calcTempAmplitude = function (temp) {
   let min = temp[0];
   let max = temp[0];
 
   for (let i = 0; i < temp.length; i++) {
     const curTemp = temp[i];
+    if (typeof curTemp !== "number") continue; // to ignore "errors"
 
     if (curTemp > max) max = curTemp;
     if (curTemp < min) min = curTemp;
@@ -1079,3 +1080,92 @@ const calcTempAmplitude = function (temp) {
 };
 // calcTempAmplitude(temperatures);
 calcTempAmplitude([3, 7, 4, 1, 8]);
+calcTempAmplitude(temperatures); */
+
+// LECTURE 59. Temperature amplitude challenge
+// To do list
+// - Find min and max temps in the array
+// - Find temp amplitude
+// - Ignore errors in the array
+
+/* const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+const temperaturesNew = [6, 8, 11, -2, -6, 5, "error", 1, 23, 34]; */
+
+// it's a good practice to start off the tasks with a function
+/* const calcTempAmplitude = function (temp) {
+  let min = temp[0]; // declaring min/max temps
+  let max = temp[0];
+
+  for (let i = 0; i < temp.length; i++) {
+    const curTemp = temp[i]; // to replace temp[i] for readability
+
+    if (typeof curTemp !== "number") continue; // to ignore errors
+
+    if (curTemp < min) min = curTemp; // to find min temp
+    if (curTemp > max) max = curTemp; // to find max temp
+  }
+
+  console.log(`min temp = ${min}`);
+  console.log(`max temp = ${max}`);
+
+  return max - min; // to return the amplitude
+};
+
+const amplitude = calcTempAmplitude(temperatures); // we then save it into a variable
+
+console.log(`amplitude = ${amplitude}`); */
+
+// Problem 2: we need to get data from 2 different temp arrays into the function
+// solution: merge both arrays together
+
+// problem: merge both arrays together
+// NOTE merging two arrays with concat() cmd
+/* const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const array3 = array1.concat(array2);
+console.log(array3); // result = [1, 2, 3, 4, 5, 6]
+
+const calcTempAmplitudeNew = function (tempFirst, tempSecond) {
+  const temp = tempFirst.concat(tempSecond);
+
+  let min = temp[0];
+  let max = temp[0];
+
+  for (let i = 0; i < temp.length; i++) {
+    const curTemp = temp[i];
+
+    if (typeof curTemp !== "number") continue;
+
+    if (curTemp < min) min = curTemp;
+    if (curTemp > max) max = curTemp;
+  }
+
+  console.log(`min temp = ${min}`);
+  console.log(`max temp = ${max}`);
+
+  return max - min;
+}; */
+
+/* const temperaturesFinal = temperatures.concat(temperaturesNew); */
+/* const amplitudeNew = calcTempAmplitudeNew(temperatures, temperaturesNew);
+console.log(`merged amplitude = ${amplitudeNew}`); */
+
+// LECTURE: Debugging
+
+// steps
+// - identify the bug
+// -- during development
+// -- with testing software
+// -- user reports during production phase
+// -- context: browsers(certain browsers), users(or certain users with certain characteristics[admin role, etc.], etc.
+
+// - find the bug
+// -- via developer console for simple codes
+// -- or via a debugger software for complex codes
+
+// - fix the bug
+// -- replace wrong solution with the new correct solution
+
+// - if possible, prevent the bug
+// -- by searching for the same bug in similar code
+// -- writing tests using testing software !!
