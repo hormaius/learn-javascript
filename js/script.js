@@ -1169,3 +1169,23 @@ console.log(`merged amplitude = ${amplitudeNew}`); */
 // - if possible, prevent the bug
 // -- by searching for the same bug in similar code
 // -- writing tests using testing software !!
+
+// LECTURE 61: Debugging with the console and breakpoints
+
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+    // C) FIX THE bug - convert it to int
+    value: Number(prompt("Degrees celcius:")), // = 283
+  };
+
+  // B) FIND THE bug
+  console.table(measurement); // a way to show objects in the console
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+// A) IDENTIFY THE bug - here we identify the bug, by running it to see the result. we expect the value 273 to be added to the value: prompt key/pair in measurement, therefore resulting in 283, although the result we get right now is 10273 - the 273 value is added literally next to it, not calculated for some reason
+console.log(measureKelvin());
