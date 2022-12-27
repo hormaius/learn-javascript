@@ -1172,12 +1172,13 @@ console.log(`merged amplitude = ${amplitudeNew}`); */
 
 // LECTURE 61: Debugging with the console and breakpoints
 
-const measureKelvin = function () {
+/* const measureKelvin = function () {
   const measurement = {
     type: "temp",
     unit: "celsius",
     // C) FIX THE bug - convert it to int
-    value: Number(prompt("Degrees celcius:")), // = 283
+    // value: Number(prompt("Degrees celcius:")), // = 283
+    value: 10,
   };
 
   // B) FIND THE bug
@@ -1189,3 +1190,93 @@ const measureKelvin = function () {
 
 // A) IDENTIFY THE bug - here we identify the bug, by running it to see the result. we expect the value 273 to be added to the value: prompt key/pair in measurement, therefore resulting in 283, although the result we get right now is 10273 - the 273 value is added literally next to it, not calculated for some reason
 console.log(measureKelvin());
+
+const calcTempAmplitudeBug = function (tempFirst, tempSecond) {
+  const temp = tempFirst.concat(tempSecond);
+
+  // below, when running this loop iteration, the minimum temp will always stay at 0 because the "min" declaration 0 is smaller than rest of the values in the temp arrays.
+  let min = 0; // always will be the lowest temp, this is the bug
+  let max = 0;
+  // to fix the bug above, we simply replace both values by temp[0]
+
+  for (let i = 0; i < temp.length; i++) {
+    const curTemp = temp[i];
+
+    if (typeof curTemp !== "number") continue;
+
+    // debugger; - to keep in mind
+    if (curTemp < min) min = curTemp;
+    if (curTemp > max) max = curTemp;
+  }
+
+  console.log(`min temp = ${min}`);
+  console.log(`max temp = ${max}`);
+
+  return max - min;
+};
+
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
+console.log(`merged amplitude = ${amplitudeBug}`);
+ */
+
+//////////////////////////
+// 62. Coding Challenge //
+//////////////////////////
+/* Given an array of forecasted maximum temperatures, the thermometer displays a string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+
+Your tasks:
+1. Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console. Try it with both test datasets.
+2. Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+
+Test data:
+Data 1: [17, 21, 23]
+Data 2: [12, 5, -5, 0, 4] */
+
+/* 
+Step 1) Understanding the problem
+- We need to implement a function to print out weather forecasts
+
+Step 2) Break the problem into smaller sub-problems
+- We need to store the temp data somewhere DONE
+- We need to retrieve the data from that storage (use a function?) DONE
+-- Said function requires a loop to loop through the days automatically DONE
+--- NOTE the loop needs to start counting from day 1, not 0 as loops usually start from 0
+-- Finally, the function needs to be able to print from a second data storage DONE
+- We then need to implement a function to print out said data in a string DONE
+*/
+
+/* const tempData = [17, 21, 23];
+const tempDataSecond = [12, 5, -5, 0, 4];
+console.log(`tempData = ${tempData}`);
+console.log(`second tempData = ${tempDataSecond}`);
+
+const printForecast = function (tempFirst, tempSecond) {
+  const temp = tempFirst.concat(tempSecond);
+  console.log(`added tempData = ${temp}`);
+
+  for (let i = 0; i < temp.length; i++) {
+    const currentTemp = temp[i];
+    const currentDay = i + 1;
+    if (typeof currentTemp !== "number") continue;
+
+    console.log(
+      `On day ${currentDay}, the expected max temperature is ${currentTemp}°C`
+    );
+  }
+};
+printForecast(tempData, tempDataSecond); */
+
+// REAL SOLUTION
+/* const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+const printForecast = function (arr) {
+  let tempString = "";
+  for (let i = 0; i < arr.length; i++) {
+    tempString += `${arr[i]}°C in ${i + 1} days ... `;
+  }
+  console.log("... " + tempString);
+};
+
+printForecast(data1);
+printForecast(data2); */
